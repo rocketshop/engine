@@ -1,10 +1,11 @@
 <?php
 
-namespace Rocket\Fuel\Article;
+namespace Rocket\Fuel\Article\Mariadb;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as Eloquent;
+use Rocket\Fuel\Article\Contracts\Article as ArticleContract;
 
-class Article extends Model
+class Article extends Eloquent implements ArticleContract
 {
     //
 }
