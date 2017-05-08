@@ -1,21 +1,20 @@
 <?php
-
 namespace Rocket\Fuel\Article;
 
-use Illuminate\Database\Eloquent\Model;
-use Rocket\Fuel\Article\Database\Article;
-use Rocket\Fuel\Article\ArticleRepository;
+use Rocket\Fuel\Contracts\Model;
+use Rocket\Fuel\Article\Contracts\ArticleRepository;
+use Illuminate\Support\Collection;
 
 class ArrayArticleRepository implements ArticleRepository
 {
     private $repository = [
         1 => [
-            'id'            => 1
+            'id'            => 1,
             'product_id'    => 30
         ],
 
         2 => [
-            'id'            => 2
+            'id'            => 2,
             'product_id'    => 30
         ],
     ];
@@ -23,7 +22,7 @@ class ArrayArticleRepository implements ArticleRepository
     /**
      * [add description]
      */
-    public function add(Model $model) : void 
+    public function add(Model $model) : \void 
     {
         $this->repository[$model->id] = $model;
     }
@@ -41,7 +40,7 @@ class ArrayArticleRepository implements ArticleRepository
      * [findById description]
      * @return [type] [description]
      */
-    public function findById(int $articleId) : Model
+    public function findById($articleId) : Model
     {
         return $this->repository[$articleId];
     }

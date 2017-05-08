@@ -1,5 +1,4 @@
 <?php
-
 namespace Rocket\Fuel\Article\Contracts;
 
 use Rocket\Fuel\Contracts\Model;

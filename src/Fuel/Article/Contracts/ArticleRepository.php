@@ -1,6 +1,6 @@
 <?php
 
-namespace Rocket\Fuel\Article;
+namespace Rocket\Fuel\Article\Contracts;
 
 use Rocket\Fuel\Contracts\Repository;
 
