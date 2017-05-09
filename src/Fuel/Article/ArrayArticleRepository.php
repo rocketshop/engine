@@ -7,22 +7,12 @@ use Illuminate\Support\Collection;
 
 class ArrayArticleRepository implements ArticleRepository
 {
-    private $repository = [
-        1 => [
-            'id'            => 1,
-            'product_id'    => 30
-        ],
-
-        2 => [
-            'id'            => 2,
-            'product_id'    => 30
-        ],
-    ];
+    private $repository = [];
 
     /**
      * [add description]
      */
-    public function add(Model $model) : \void 
+    public function add(Model $model) 
     {
         $this->repository[$model->id] = $model;
     }

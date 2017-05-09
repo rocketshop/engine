@@ -9,7 +9,7 @@ interface Repository
     /**
      * [add description]
      */
-    public function add(Model $model) : \void;
+    public function add(Model $model);
 
     /**
      * [getAll description]

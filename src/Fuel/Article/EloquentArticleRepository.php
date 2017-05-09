@@ -14,7 +14,7 @@ class EloquentArticleRepository implements ArticleRepository
     /**
      * [add description]
      */
-    public function add(Model $model) : void 
+    public function add(Model $model) 
     {
         $article = new Article();
         $article->fill($model);

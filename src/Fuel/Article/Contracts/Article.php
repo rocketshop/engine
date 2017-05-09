@@ -9,6 +9,13 @@ interface Article extends Model
      * [getId description]
      * @return [type] [description]
      */
+    public function getId() : int;
+    public function setId(int $id);
+
+    /**
+     * [getId description]
+     * @return [type] [description]
+     */
     public function getArticleId() : int;
     public function setArticleId(int $id);
 
@@ -18,6 +25,13 @@ interface Article extends Model
      */
     public function getName() : string;
     public function setName(string $name);
+
+    /**
+     * [getName description]
+     * @return [type] [description]
+     */
+    public function getSku() : string;
+    public function setSku(string $name);
 
     /**
      * [getId description]
