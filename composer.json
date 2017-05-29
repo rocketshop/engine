@@ -16,6 +16,7 @@
     "autoload": {
         "psr-4": {
             "Rocket\\Fuel\\": "src/Fuel/",
+            "Rocket\\Fuel\\": "src/Cockpit/",
             "Rocket\\Engine\\": "src/"
         }
     },

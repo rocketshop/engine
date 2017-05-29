@@ -19,8 +19,8 @@ class EngineServiceProvider extends ServiceProvider
 
         $config = config('rocketengine');
 
-        dd($config);
-
-        $this->app->register('');
+        foreach ($config['providers'] as $provider) {
+            $this->app->register($provider);
+        }
     }
 }
