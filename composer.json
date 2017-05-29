@@ -1,7 +1,7 @@
 {
     "name": "rocketshop/engine",
     "description": "The Rocket Engine.",
-    "keywords": ["e-commerce", "rocket"],
+    "keywords": [""],
     "license": "MIT",
     "homepage": "",
     "authors": [
@@ -11,29 +11,17 @@
         }
     ],
     "require": {
-        "php": ">=5.6.4",
-        "laravel/framework": "5.4.*",
-    },
-    "replace": {
-        "fuel/money": "self.version"
-    },
-    "require-dev": {
+        "php": ">=7.0"
     },
     "autoload": {
         "psr-4": {
-            "Rocket\\Fuel\\": "src/Fuel/"
+            "Rocket\\Fuel\\": "src/Fuel/",
+            "Rocket\\Engine\\": "src/"
         }
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
         }
-    },
-    "suggest": {
-    },
-    "config": {
-        "sort-packages": true
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
