@@ -1,11 +1,11 @@
 <?php
 
-namespace Rocket\Cockpit\Providers;
+namespace Rocket\Ecommerce\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Route;
 
-class CockpitServiceProvider extends ServiceProvider
+class EcommerceServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
@@ -32,10 +32,10 @@ class CockpitServiceProvider extends ServiceProvider
     {
         if (!$this->app->routesAreCached()) {
             $router = app('router');
-
-            $router->group(['namespace' => 'Rocket\Cockpit\Http\Controllers'], function ($router) {
-                require COCKPIT_PATH.'/routes/api.php';
-                require COCKPIT_PATH.'/routes/web.php';
+§
+            $router->group(['namespace' => 'Rocket\Ecommerce\Http\Controllers'], function ($router) {
+                require ECOMMERCE_PATH.'/routes/api.php';
+                require ECOMMERCE_PATH.'/routes/web.php';
             });
         }
     }
@@ -47,7 +47,7 @@ class CockpitServiceProvider extends ServiceProvider
      */
     protected function registerMiddleware()
     {
-        Route::aliasMiddleware('admin', \Rocket\Cockpit\Http\Middleware\Admin::class);
+        Route::aliasMiddleware('admin', \Rocket\Ecommerce\Http\Middleware\Admin::class);
     }
 
     /**
@@ -57,9 +57,9 @@ class CockpitServiceProvider extends ServiceProvider
      */
     protected function defineResources()
     {
-        $this->loadViewsFrom(COCKPIT_PATH.'/resources/views', 'cockpit');
-        $this->loadTranslationsFrom(COCKPIT_PATH.'/resources/lang', 'cockpit'); 
-        $this->mergeConfigFrom(COCKPIT_PATH.'/config/rocket/cockpit.php', 'cockpit');
+        $this->loadViewsFrom(ECOMMERCE_PATH.'/resources/views', 'ecommerce');
+        $this->loadTranslationsFrom(ECOMMERCE_PATH.'/resources/lang', 'ecommerce'); 
+        $this->mergeConfigFrom(ECOMMERCE_PATH.'/config/rocket/cockpit.php', 'cockpit');
     }
 
     /**
@@ -69,8 +69,8 @@ class CockpitServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (! defined('COCKPIT_PATH')) {
-            define('COCKPIT_PATH', realpath(__DIR__.'/../../'));
+        if (! defined('ECOMMERCE_PATH')) {
+            define('ECOMMERCE_PATH', realpath(__DIR__.'/../../'));
         }
     }
 }

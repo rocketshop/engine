@@ -30,8 +30,8 @@ class ArrayUserRepository implements UserRepository
      * [findById description]
      * @return [type] [description]
      */
-    public function findById($articleId) : Model
+    public function findById($id) : Model
     {
-        return $this->repository[$articleId];
+        return $this->repository[$id];
     }
 }

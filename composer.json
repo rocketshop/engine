@@ -17,6 +17,7 @@
         "psr-4": {
             "Rocket\\Fuel\\": "src/Fuel/",
             "Rocket\\Cockpit\\": "src/Cockpit/src/",
+            "Rocket\\Ecommerce\\": "src/Ecommerce/src/",
             "Rocket\\Engine\\": "src/"
         }
     },
