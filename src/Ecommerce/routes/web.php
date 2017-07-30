@@ -12,4 +12,5 @@
 */
 
 
-Route::middleware('web')->get('/admin/products', 'EcommerceController@products');
+Route::middleware('web')->get('/admin/products', 'ProductController@list');
+Route::middleware('web')->get('/admin/articles', 'ArticleController@list');

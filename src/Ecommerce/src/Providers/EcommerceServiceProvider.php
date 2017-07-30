@@ -2,7 +2,7 @@
 
 namespace Rocket\Ecommerce\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Rocket\Engine\ServiceProvider;
 use Route;
 
 class EcommerceServiceProvider extends ServiceProvider
@@ -32,7 +32,7 @@ class EcommerceServiceProvider extends ServiceProvider
     {
         if (!$this->app->routesAreCached()) {
             $router = app('router');
-§
+
             $router->group(['namespace' => 'Rocket\Ecommerce\Http\Controllers'], function ($router) {
                 require ECOMMERCE_PATH.'/routes/api.php';
                 require ECOMMERCE_PATH.'/routes/web.php';
@@ -47,7 +47,6 @@ class EcommerceServiceProvider extends ServiceProvider
      */
     protected function registerMiddleware()
     {
-        Route::aliasMiddleware('admin', \Rocket\Ecommerce\Http\Middleware\Admin::class);
     }
 
     /**
@@ -58,8 +57,8 @@ class EcommerceServiceProvider extends ServiceProvider
     protected function defineResources()
     {
         $this->loadViewsFrom(ECOMMERCE_PATH.'/resources/views', 'ecommerce');
-        $this->loadTranslationsFrom(ECOMMERCE_PATH.'/resources/lang', 'ecommerce'); 
-        $this->mergeConfigFrom(ECOMMERCE_PATH.'/config/rocket/cockpit.php', 'cockpit');
+        $this->loadTranslationsFrom(ECOMMERCE_PATH.'/resources/lang', 'ecommerce');
+        $this->recursiveMergeConfigFrom(ECOMMERCE_PATH.'/config/rocket/ecommerce/cockpit/menu.php', 'cockpit.menu');
     }
 
     /**
@@ -72,5 +71,20 @@ class EcommerceServiceProvider extends ServiceProvider
         if (! defined('ECOMMERCE_PATH')) {
             define('ECOMMERCE_PATH', realpath(__DIR__.'/../../'));
         }
+    }
+
+
+    /**
+     * Merge the given configuration with the existing configuration.
+     *
+     * @param  string  $path
+     * @param  string  $key
+     * @return void
+     */
+    protected function recursiveMergeConfigFrom($path, $key)
+    {
+        $config = $this->app['config']->get($key, []);
+
+        $this->app['config']->set($key, $this->arrayMergeRecursive($config, require $path, true));
     }
 }

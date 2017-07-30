@@ -4,8 +4,7 @@ return [
     'prefix' => 'admin',
 
     'menu' => [
-
-        [
+        'general' => [
             'name'  => trans('cockpit::default.general'),
             'items' => [
 

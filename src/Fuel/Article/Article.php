@@ -9,7 +9,7 @@ use Rocket\Fuel\Article\Contracts\ArticleStock as ArticleStockContract;
 
 class Article extends Eloquent implements ArticleContract
 {
-    protected $fillable = ['id', 'product_id', 'sku', 'name', 'description'];
+    protected $fillable = ['id', 'product_id', 'sku', 'name', 'description', 'stock'];
 
     /**
      * 
