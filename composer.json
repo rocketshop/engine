@@ -18,6 +18,7 @@
             "Rocket\\Fuel\\": "src/Fuel/",
             "Rocket\\Cockpit\\": "src/Cockpit/src/",
             "Rocket\\Ecommerce\\": "src/Ecommerce/src/",
+            "Rocket\\Stories\\": "src/Stories/src/",
             "Rocket\\Engine\\": "src/"
         }
     },
