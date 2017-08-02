@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'stories' => 'Stories'
+    'stories' => 'Stories',
+    'categories' => 'Categories'
 ];

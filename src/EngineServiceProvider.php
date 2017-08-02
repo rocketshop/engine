@@ -23,4 +23,8 @@ class EngineServiceProvider extends ServiceProvider
             $this->app->register($provider);
         }
     }
+
+    public function boot() {
+        \Carbon\Carbon::setLocale(config('app.locale'));
+    }
 }

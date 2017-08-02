@@ -1,6 +1,7 @@
 <?php
-namespace Rocket\Ecommerce\Http\Controllers;
-use Rocket\Cockpit\Http\Controllers\Controller as BaseController;
+namespace Rocket\Stories\Http\Controllers;
+
+use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {

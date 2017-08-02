@@ -12,7 +12,7 @@
 */
 
 Route::middleware('web')->get('/admin', 'Controller@redirect');
-Route::middleware('web')->get('/admin/login', 'Auth\LoginController@showLoginForm');
+Route::middleware('web')->get('/admin/login', 'Auth\LoginController@showLoginForm')->name('login');
 
 Route::middleware('web')->post('/admin/login', 'Auth\LoginController@login');
 Route::middleware('web')->get('/admin/logout', 'Auth\LoginController@logout');

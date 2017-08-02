@@ -11,5 +11,17 @@
 |
 */
 
+//stories
+Route::middleware('web')->get('/stories', 'StoryController@list');
+Route::middleware('web')->get('/stories/create', 'StoryController@create');
+Route::middleware('web')->post('/stories/create', 'StoryController@createAction');
 
+Route::middleware('web')->get('/story/{id}', 'StoryController@story');
+Route::middleware('web')->get('/story/{id}/update', 'StoryController@update');
+Route::middleware('web')->put('/story/{id}', 'StoryController@updateAction');
+Route::middleware('web')->delete('/story/{id}', 'StoryController@deleteAction');
+
+
+// admin
 Route::middleware('web')->get('/admin/stories', 'StoryController@list');
+Route::middleware('web')->get('/admin/stories/categories', 'CategoryController@list');

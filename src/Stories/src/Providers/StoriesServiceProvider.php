@@ -19,8 +19,24 @@ class StoriesServiceProvider extends ServiceProvider
         });
 
         $this->defineResources();
+        $this->definePublishes();
 
         $this->registerMiddleware();
+    }
+    /**
+     * [publishResources description]
+     * 
+     * @return void
+     */
+    protected function definePublishes() 
+    {
+        $this->publishes([
+            STORIES_PATH.'/database/migrations/' => database_path('migrations')
+        ], 'migrations');
+
+        $this->publishes([
+            STORIES_PATH.'/../resources/views/web' => base_path('resources/views/vendor/stories'),
+        ], 'views');
     }
 
     /**
@@ -34,7 +50,6 @@ class StoriesServiceProvider extends ServiceProvider
             $router = app('router');
 
             $router->group(['namespace' => 'Rocket\Stories\Http\Controllers'], function ($router) {
-                require STORIES_PATH.'/routes/api.php';
                 require STORIES_PATH.'/routes/web.php';
             });
         }
@@ -56,7 +71,8 @@ class StoriesServiceProvider extends ServiceProvider
      */
     protected function defineResources()
     {
-        $this->loadViewsFrom(STORIES_PATH.'/resources/views', 'stories');
+        $this->loadViewsFrom(STORIES_PATH.'/resources/views/admin', 'admin.stories');
+        $this->loadViewsFrom(STORIES_PATH.'/resources/views/web', 'stories');
         $this->loadTranslationsFrom(STORIES_PATH.'/resources/lang', 'stories');
         $this->recursiveMergeConfigFrom(STORIES_PATH.'/config/rocket/stories/cockpit/menu.php', 'cockpit.menu');
     }

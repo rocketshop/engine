@@ -1,9 +1,14 @@
 <?php
 
-namespace Rocket\Ecommerce\Http\Controllers;
+namespace Rocket\Stories\Http\Controllers;
+use Rocket\Stories\EloquentStoryRepository as StoryRepository;
+use Rocket\Stories\Story;
+use Illuminate\Http\Request;
 
 class StoryController extends Controller
 {
+    protected $data = [];
+
     /**
      * Show the admin products.
      *
@@ -11,6 +16,57 @@ class StoryController extends Controller
      */
     public function list()
     {
-        return view('stories::admin.stories', $this->data);
+        $stories = new StoryRepository();
+        
+        $this->data['stories'] = $stories->getAll();
+        return view('stories::stories', $this->data);
+    }
+
+    public function story($id)
+    {
+        $repository = new StoryRepository();
+
+        $this->data['story'] = $repository->findById($id);
+        return view('stories::story', $this->data);
+    }
+
+    public function create()
+    {
+        return view('stories::create_story', $this->data);
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function createAction(Request $request) 
+    {
+        if (\Auth::check()) {
+            $repository = new StoryRepository();
+
+            $story = new Story();
+            $story->title       = $request->title;
+            $story->slug        = str_slug($request->title, '-');
+            $story->story       = $request->story;
+            $story->category_id = 1;// $request->category_id;
+            $story->user_id     = \Auth::user()->id;
+
+            $repository->add($story);
+        }
+    }
+
+    public function storyAction() 
+    {
+    }
+
+    public function updateAction() 
+    {
+        
+    }
+
+    public function deleteAction() 
+    {
+        
     }
 }

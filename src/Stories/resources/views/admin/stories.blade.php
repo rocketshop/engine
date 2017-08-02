@@ -4,7 +4,7 @@
 
 <div class="row pb-4">
     <div class="col">
-        <h1>{{ trans('stories::stories') }}Stories</h1>
+        <h1>{{ trans('stories::default.stories') }}</h1>
     </div>
 </div>
 
@@ -14,18 +14,26 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Name</th>
-                    <th class="text-center">Enabled</th>
+                    <th>title</th>
+                    <th>slug</th>
+                    <th>story</th>
+                    <th>category</th>
+                    <th>user</th>
+                    <th>created</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-            @foreach($products as $product)
+            @foreach($stories as $story)
                 <tr>
-                    <th scope="row">{{ $product->id }}</th>
-                    <td class="text-capitalize">{{ $product->name }}</td>
-                    <td class="text-success text-uppercase font-weight-bold text-center {{ $product->id % 5 ? 'text-success' : 'text-danger' }}">{{ $product->id % 5 ? 'Yes' : 'No' }}</td>
-                    <td><a href="/admin/product/{{ $product->id }}">edit</a></td>
+                    <th scope="row">{{ $story->id }}</th>
+                    <td class="text-capitalize">{{ $story->title }}</td>
+                    <td class="text-capitalize">{{ $story->slug }}</td>
+                    <td class="text-capitalize">{{ $story->story }}</td>
+                    <td class="text-capitalize">{{ $story->category->name }}</td>
+                    <td class="text-capitalize">{{ $story->user->name }}</td>
+                    <td class="text-capitalize">{{ $story->created_at }}</td>
+                    <td><a href="/admin/story/{{ $story->id }}">edit</a></td>
                 </tr>
             @endforeach
             </tbody>
