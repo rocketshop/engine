@@ -18,4 +18,9 @@ class Story extends Eloquent implements StoryContract
     {
         return $this->belongsTo('Rocket\Fuel\User\User');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('Rocket\Stories\Comment');
+    }
 }

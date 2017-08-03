@@ -2,7 +2,7 @@
 
 namespace Rocket\Stories;
 
-use Rocket\Stories\Contracts\Model;
+use Rocket\Stories\Contracts\Comment as Model;
 use Rocket\Stories\Contracts\CommentRepository;
 use Illuminate\Support\Collection;
 
@@ -16,9 +16,7 @@ class EloquentCommentRepository implements CommentRepository
      */
     public function add(Model $model) 
     {
-        $comment = new Comment();
-        $comment->fill($model);
-        $comment->save();
+        $model->save();
     }
 
     /**

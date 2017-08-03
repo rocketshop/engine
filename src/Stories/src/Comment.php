@@ -9,5 +9,20 @@ class Comment extends Eloquent implements CommentContract
 {
     protected $table = 'story_comments';
 
-    protected $fillable = ['title', 'slug', 'story', 'category_id', 'user_id'];
+    protected $fillable = ['name', 'story_id', 'user_id', 'parent_id'];
+
+    public function user()
+    {
+        return $this->belongsTo('Rocket\Fuel\User\User');
+    }
+
+    public function story()
+    {
+        return $this->belongsTo('Rocket\Stories\Story');
+    }
+
+    public function comment()
+    {
+        return $this->belongsTo('Rocket\Stories\Comment');
+    }
 }

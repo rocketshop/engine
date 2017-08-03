@@ -71,7 +71,7 @@ class StoriesServiceProvider extends ServiceProvider
      */
     protected function defineResources()
     {
-        $this->loadViewsFrom(STORIES_PATH.'/resources/views/admin', 'admin.stories');
+        $this->loadViewsFrom(STORIES_PATH.'/resources/views/admin', 'stories.admin');
         $this->loadViewsFrom(STORIES_PATH.'/resources/views/web', 'stories');
         $this->loadTranslationsFrom(STORIES_PATH.'/resources/lang', 'stories');
         $this->recursiveMergeConfigFrom(STORIES_PATH.'/config/rocket/stories/cockpit/menu.php', 'cockpit.menu');

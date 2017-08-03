@@ -2,6 +2,8 @@
 
 namespace Rocket\Stories\Http\Controllers;
 use Rocket\Stories\EloquentStoryRepository as StoryRepository;
+use Rocket\Stories\EloquentCommentRepository as CommentRepository;
+use Rocket\Stories\Comment;
 use Rocket\Stories\Story;
 use Illuminate\Http\Request;
 
@@ -54,10 +56,24 @@ class StoryController extends Controller
 
             $repository->add($story);
         }
+
+        return back();
     }
 
-    public function storyAction() 
+    public function createCommentAction($id, Request $request) 
     {
+        if (\Auth::check()) {
+            $repository = new CommentRepository();
+
+            $comment = new Comment();
+            $comment->comment   = $request->comment;
+            $comment->story_id  = $id;
+            $comment->user_id   = \Auth::user()->id;
+
+            $repository->add($comment);
+        }
+
+        return back();
     }
 
     public function updateAction() 
