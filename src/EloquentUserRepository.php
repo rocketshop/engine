@@ -1,9 +1,9 @@
 <?php
 
-namespace Rocket\Fuel\User;
+namespace Rocket\Engine\User;
 
-use Rocket\Fuel\Contracts\Model;
-use Rocket\Fuel\User\Contracts\UserRepository;
+use Rocket\Engine\Contracts\Model;
+use Rocket\Engine\Contracts\UserRepository;
 use Illuminate\Support\Collection;
 
 class EloquentUserRepository implements UserRepository

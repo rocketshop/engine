@@ -1,5 +1,5 @@
 <?php
-namespace Rocket\Fuel\Contracts;
+namespace Rocket\Engine\Contracts;
 
 use Illuminate\Support\Collection;
 

@@ -15,10 +15,9 @@
     },
     "autoload": {
         "psr-4": {
-            "Rocket\\Fuel\\": "src/Fuel/",
-            "Rocket\\Cockpit\\": "src/Cockpit/src/",
-            "Rocket\\Ecommerce\\": "src/Ecommerce/src/",
-            "Rocket\\Stories\\": "src/Stories/src/",
+            "Rocket\\Cockpit\\": "packages/Cockpit/src/",
+            "Rocket\\Ecommerce\\": "packages/Ecommerce/src/",
+            "Rocket\\Stories\\": "packages/Stories/src/",
             "Rocket\\Engine\\": "src/"
         }
     },

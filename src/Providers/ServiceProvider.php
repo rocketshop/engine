@@ -1,10 +1,10 @@
 <?php
 
-namespace Rocket\Engine;
+namespace Rocket\Engine\Providers;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class ServiceProvider extends BaseServiceProvider
+abstract ServiceProvider extends BaseServiceProvider
 {
 
     /**

@@ -3,7 +3,7 @@
 namespace Rocket\Fuel\User;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use Rocket\Fuel\User\Contracts\User as UserContract;
+use Rocket\Engine\Contracts\User as UserContract;
 
 class User extends Eloquent implements UserContract
 {
