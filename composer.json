@@ -18,7 +18,7 @@
             "Rocket\\Cockpit\\": "packages/Cockpit/src/",
             "Rocket\\Ecommerce\\": "packages/Ecommerce/src/",
             "Rocket\\Stories\\": "packages/Stories/src/",
-            "Rocket\\Stories\\": "packages/User/src/",
+            "Rocket\\User\\": "packages/User/src/",
             "Rocket\\Engine\\": "src/"
         }
     },

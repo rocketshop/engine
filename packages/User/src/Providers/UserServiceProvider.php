@@ -1,11 +1,11 @@
 <?php
 
-namespace Rocket\Stories\Providers;
+namespace Rocket\User\Providers;
 
 use Rocket\Engine\Providers\ServiceProvider;
 use Route;
 
-class StoriesServiceProvider extends ServiceProvider
+class UserServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
