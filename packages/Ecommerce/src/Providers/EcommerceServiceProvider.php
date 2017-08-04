@@ -2,7 +2,7 @@
 
 namespace Rocket\Ecommerce\Providers;
 
-use Rocket\Engine\ServiceProvider;
+use Rocket\Engine\Providers\ServiceProvider;
 use Route;
 
 class EcommerceServiceProvider extends ServiceProvider

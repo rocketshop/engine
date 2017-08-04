@@ -1,6 +1,6 @@
 <?php
 
-namespace Rocket\Fuel\User;
+namespace Rocket\Engine;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Rocket\Engine\Contracts\User as UserContract;

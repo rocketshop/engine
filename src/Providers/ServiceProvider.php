@@ -4,7 +4,7 @@ namespace Rocket\Engine\Providers;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-abstract ServiceProvider extends BaseServiceProvider
+abstract class ServiceProvider extends BaseServiceProvider
 {
 
     /**

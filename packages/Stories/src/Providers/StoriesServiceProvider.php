@@ -2,7 +2,7 @@
 
 namespace Rocket\Stories\Providers;
 
-use Rocket\Engine\ServiceProvider;
+use Rocket\Engine\Providers\ServiceProvider;
 use Route;
 
 class StoriesServiceProvider extends ServiceProvider

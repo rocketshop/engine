@@ -2,7 +2,7 @@
 
 namespace Rocket\Stories;
 
-use Rocket\Stories\Contracts\Comment as Model;
+use Rocket\Engine\Contracts\Model;
 use Rocket\Stories\Contracts\CommentRepository;
 use Illuminate\Support\Collection;
 

@@ -1,8 +1,9 @@
 <?php
-
 namespace Rocket\Stories\Contracts;
 
-interface CategoryRepository
+use Rocket\Engine\Contracts\Repository as RepositoryContract;
+
+interface CategoryRepository extends RepositoryContract
 {
 
 }

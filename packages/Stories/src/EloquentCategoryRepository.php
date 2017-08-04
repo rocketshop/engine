@@ -2,7 +2,7 @@
 
 namespace Rocket\Stories;
 
-use Rocket\Stories\Contracts\Category as Model;
+use Rocket\Engine\Contracts\Model;
 use Rocket\Stories\Contracts\CategoryRepository;
 use Illuminate\Support\Collection;
 
