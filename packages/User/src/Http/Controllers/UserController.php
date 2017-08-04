@@ -7,7 +7,7 @@ use Rocket\User\EloquentUserRepository as UserRepository;
 use Rocket\User\User;
 use Illuminate\Http\Request;
 
-class ProfileController extends BaseController
+class UserController extends BaseController
 {
     protected $data = [];
 

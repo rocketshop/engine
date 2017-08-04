@@ -12,7 +12,8 @@
 */
 
 // web
-
+Route::middleware('web')->get('/login', 'UserController@login');
+Route::middleware('web')->get('/register', 'UserController@register');
 
 // admin
 

@@ -31,11 +31,11 @@ class UserServiceProvider extends ServiceProvider
     protected function definePublishes() 
     {
         $this->publishes([
-            STORIES_PATH.'/database/migrations/' => database_path('migrations')
+            USER_PATH.'/database/migrations/' => database_path('migrations')
         ], 'migrations');
 
         $this->publishes([
-            STORIES_PATH.'/../resources/views/web' => base_path('resources/views/vendor/stories'),
+            USER_PATH.'/../resources/views/web' => base_path('resources/views/vendor/user'),
         ], 'views');
     }
 
@@ -49,8 +49,8 @@ class UserServiceProvider extends ServiceProvider
         if (!$this->app->routesAreCached()) {
             $router = app('router');
 
-            $router->group(['namespace' => 'Rocket\Stories\Http\Controllers'], function ($router) {
-                require STORIES_PATH.'/routes/web.php';
+            $router->group(['namespace' => 'Rocket\User\Http\Controllers'], function ($router) {
+                require USER_PATH.'/routes/web.php';
             });
         }
     }
@@ -71,10 +71,10 @@ class UserServiceProvider extends ServiceProvider
      */
     protected function defineResources()
     {
-        $this->loadViewsFrom(STORIES_PATH.'/resources/views/admin', 'stories.admin');
-        $this->loadViewsFrom(STORIES_PATH.'/resources/views/web', 'stories');
-        $this->loadTranslationsFrom(STORIES_PATH.'/resources/lang', 'stories');
-        $this->recursiveMergeConfigFrom(STORIES_PATH.'/config/rocket/stories/cockpit/menu.php', 'cockpit.menu');
+        $this->loadViewsFrom(USER_PATH.'/resources/views/admin', 'user.admin');
+        $this->loadViewsFrom(USER_PATH.'/resources/views/web', 'user');
+        $this->loadTranslationsFrom(USER_PATH.'/resources/lang', 'user');
+        $this->recursiveMergeConfigFrom(USER_PATH.'/config/rocket/user/cockpit/menu.php', 'cockpit.menu');
     }
 
     /**
@@ -84,8 +84,8 @@ class UserServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (! defined('STORIES_PATH')) {
-            define('STORIES_PATH', realpath(__DIR__.'/../../'));
+        if (! defined('USER_PATH')) {
+            define('USER_PATH', realpath(__DIR__.'/../../'));
         }
     }
 

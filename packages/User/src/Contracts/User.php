@@ -1,5 +1,5 @@
 <?php
-namespace Rocket\Engine\Contracts;
+namespace Rocket\User\Contracts;
 
 use Rocket\Engine\Contracts\Model;
 

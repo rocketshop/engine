@@ -12,7 +12,7 @@
 */
 
 //stories
-Route::middleware('web')->get('/stories', 'StoryController@list');
+Route::middleware('web')->get('/stories', 'StoryController@list')->name('stories::stories');
 Route::middleware('web')->get('/stories/create', 'StoryController@create');
 Route::middleware('web')->post('/stories/create', 'StoryController@createAction');
 
