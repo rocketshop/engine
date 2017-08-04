@@ -18,15 +18,6 @@ Route::middleware('web')->post('/admin/login', 'Auth\LoginController@login');
 Route::middleware('web')->get('/admin/logout', 'Auth\LoginController@logout');
 
 Route::middleware('web')->get('/admin/dashboard', 'AdminController@dashboard');
-
-Route::middleware('web')->get('/admin/users', 'Admin\UsersController@users');
-
-Route::middleware('web')->get('/admin/user', 'Admin\UsersController@new');
-Route::middleware('web')->post('/admin/user', 'Admin\UsersController@newAction');
-
-Route::middleware('web')->get('/admin/user/{id}', 'Admin\UsersController@edit');
-Route::middleware('web')->post('/admin/user/{id}', 'Admin\UsersController@editAction');
-
 Route::middleware('web')->get('/admin/appearance', 'Admin\AppearanceController@appearance');
 Route::middleware('web')->post('/admin/appearance', 'Admin\AppearanceController@appearanceAction');
 

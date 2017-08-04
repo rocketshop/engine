@@ -13,7 +13,7 @@ class Comment extends Eloquent implements CommentContract
 
     public function user()
     {
-        return $this->belongsTo('Rocket\Engine\User');
+        return $this->belongsTo('Rocket\User\User');
     }
 
     public function story()

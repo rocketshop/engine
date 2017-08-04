@@ -1,11 +1,12 @@
 <?php
 
-namespace Rocket\Cockpit\Http\Controllers\Admin;
-use \Rocket\Cockpit\Http\Controllers\Controller;
-use Rocket\Fuel\User\EloquentUserRepository as UserRepository;
+namespace Rocket\User\Http\Controllers\Admin;
+
+use Illuminate\Routing\Controller as BaseController;
+use Rocket\User\EloquentUserRepository as UserRepository;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class UsersController extends BaseController
 {
     protected $data = []; // the information we send to the view
 
@@ -19,7 +20,7 @@ class UsersController extends Controller
         $users = new UserRepository();
         $this->data['users'] = $users->getAll();
 
-        return view('cockpit::admin.users', $this->data);
+        return view('user::admin.users', $this->data);
     }
 
     /**
@@ -32,7 +33,7 @@ class UsersController extends Controller
         $users = new UserRepository();
         $this->data['user'] = $users->findById($id);
 
-        return view('cockpit::admin.user.edit', $this->data);
+        return view('user::admin.edit', $this->data);
     }
 
     /**
@@ -42,7 +43,7 @@ class UsersController extends Controller
      */
     public function editAction($id, Request $request)
     {
-        $errors = ['general' => trans('cockpit::save.failed')];
+        $errors = ['general' => trans('user::save.failed')];
 
         return redirect()->back()
             ->withInput($request->all())

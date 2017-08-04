@@ -16,7 +16,7 @@ class Story extends Eloquent implements StoryContract
 
     public function user()
     {
-        return $this->belongsTo('Rocket\Engine\User');
+        return $this->belongsTo('Rocket\User\User');
     }
 
     public function comments()

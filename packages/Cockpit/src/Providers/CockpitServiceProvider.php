@@ -34,7 +34,6 @@ class CockpitServiceProvider extends ServiceProvider
             $router = app('router');
 
             $router->group(['namespace' => 'Rocket\Cockpit\Http\Controllers'], function ($router) {
-                require COCKPIT_PATH.'/routes/api.php';
                 require COCKPIT_PATH.'/routes/web.php';
             });
         }
