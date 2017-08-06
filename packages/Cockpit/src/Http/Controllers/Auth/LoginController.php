@@ -2,23 +2,16 @@
 
 namespace Rocket\Cockpit\Http\Controllers\Auth;
 
-use Rocket\Cockpit\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Rocket\User\Http\Controllers\LoginController as UserLoginController;
 
-class LoginController extends Controller
+class LoginController extends UserLoginController
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
-    use AuthenticatesUsers;
+    /**
+     * Where to redirect users after login.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/admin/dashboard';
 
     /**
      * Show the application's login form.
@@ -28,22 +21,5 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         return view('cockpit::auth.login');
-    }
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/admin/dashboard';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest', ['except' => 'logout']);
     }
 }

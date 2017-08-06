@@ -10,11 +10,22 @@ use Illuminate\Http\Request;
 class UserController extends BaseController
 {
     protected $data = [];
-
-    public function profile()
+    
+    public function __construct()
     {
-        $this->data['user'] = \Auth::user();
-        return view('users::profile', $this->data);
+        $this->middleware('auth', ['except' => ['login', 'register']]);
+    }
+
+    public function profile($id = null)
+    {
+        if ($id) {
+            $repsitory = new UserRepository();
+            $this->data['user'] = $repsitory->findById($id);
+        } else {
+            $this->data['user'] = \Auth::user();
+        }
+
+        return view('user::profile', $this->data);
     }
 
     public function login()
@@ -25,16 +36,5 @@ class UserController extends BaseController
     public function register()
     {
         return view('user::register', $this->data);
-    }
-
-
-    public function loginAction() 
-    {
-        return back();
-    }
-
-    public function registerAction() 
-    {
-        return back();
     }
 }

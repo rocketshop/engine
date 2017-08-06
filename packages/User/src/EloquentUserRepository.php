@@ -1,6 +1,6 @@
 <?php
 
-namespace Rocket\User\User;
+namespace Rocket\User;
 
 use Rocket\Engine\Contracts\Model;
 use Rocket\User\Contracts\UserRepository;
