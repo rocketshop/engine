@@ -55,9 +55,9 @@ class StoreServiceProvider extends ServiceProvider
      */
     protected function defineResources()
     {
-        $this->loadViewsFrom(STORE_PATH.'/resources/views', 'ecommerce');
-        $this->loadTranslationsFrom(STORE_PATH.'/resources/lang', 'ecommerce');
-        $this->recursiveMergeConfigFrom(STORE_PATH.'/config/rocket/ecommerce/cockpit/menu.php', 'cockpit.menu');
+        $this->loadViewsFrom(STORE_PATH.'/resources/views', 'store');
+        $this->loadTranslationsFrom(STORE_PATH.'/resources/lang', 'store');
+        $this->recursiveMergeConfigFrom(STORE_PATH.'/config/vendor/cockpit/menu.php', 'cockpit.menu');
     }
 
     /**
