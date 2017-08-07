@@ -77,7 +77,7 @@ class StoreServiceProvider extends ServiceProvider
             require_once($file);
         }
 
-        Blade::directive('money', function ($money, $currency = "USD") {
+        \Blade::directive('money', function ($money, $currency = "USD") {
             return "<?php echo money($money, $currency); ?>";
         });
     }
