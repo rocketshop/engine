@@ -14,7 +14,7 @@ return [
 
     'providers' => [
         Rocket\Cockpit\Providers\CockpitServiceProvider::class,
-        Rocket\Store\Providers\EcommerceServiceProvider::class,
+        Rocket\Store\Providers\StoreServiceProvider::class,
         Rocket\Stories\Providers\StoriesServiceProvider::class,
         Rocket\User\Providers\UserServiceProvider::class,
     ],
