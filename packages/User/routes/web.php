@@ -17,7 +17,7 @@ Route::middleware('web')->get('/register', 'UserController@register');
 Route::middleware('web')->get('/profile', 'UserController@profile')->middleware('auth');
 
 Route::middleware('web')->post('/user/login', 'LoginController@login');
-Route::middleware('web')->post('/user/register', 'LoginController@register');
+Route::middleware('web')->post('/user/register', 'RegisterController@register');
 Route::middleware('web')->get('/logout', 'LoginController@logout');
 Route::middleware('web')->get('/user/{id}', 'UserController@profile');
 

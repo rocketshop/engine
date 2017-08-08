@@ -16,9 +16,9 @@ class EloquentUserRepository implements UserRepository
      */
     public function add(Model $model) 
     {
-        $article = new User();
-        $article->fill($model);
-        $article->save();
+        $user = self::create($model);
+
+        return $user;
     }
 
     /**
@@ -37,5 +37,17 @@ class EloquentUserRepository implements UserRepository
     public function findById($userId) : Model
     {
         return User::where('id', $userId)->first();
+    }
+
+    // should we cache in this file aswell maybe
+
+    /**
+     * [add description]
+     */
+    static function create(Model $model) 
+    {
+        $model->save();
+
+        return $model;
     }
 }

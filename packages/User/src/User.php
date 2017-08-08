@@ -2,11 +2,11 @@
 
 namespace Rocket\User;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
 use Rocket\User\Contracts\User as UserContract;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Eloquent implements UserContract
+class User extends Authenticatable implements UserContract
 {
     use Notifiable;
 
