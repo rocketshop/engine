@@ -4,7 +4,7 @@ namespace Rocket\Stories;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Votes extends Eloquent
+class CommentVotes extends Eloquent
 {
     protected $table = 'comment_votes';
 
