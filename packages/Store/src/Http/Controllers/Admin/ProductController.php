@@ -1,6 +1,6 @@
 <?php
 
-namespace Rocket\Store\Http\Controllers;
+namespace Rocket\Store\Http\Controllers\Admin;
 
 use Rocket\Cockpit\Http\Controllers\Controller as BaseController;
 use Rocket\Store\ArrayProductRepository as ProductRepository;

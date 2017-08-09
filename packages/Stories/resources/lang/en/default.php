@@ -2,5 +2,6 @@
 
 return [
     'stories' => 'Stories',
-    'categories' => 'Categories'
+    'categories' => 'Categories',
+    'posted' => 'Posted :time'
 ];

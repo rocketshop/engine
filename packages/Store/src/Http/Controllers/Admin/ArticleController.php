@@ -1,8 +1,8 @@
 <?php
 
-namespace Rocket\Store\Http\Controllers;
+namespace Rocket\Store\Http\Controllers\Admin;
 
-use Rocket\Store\ArrayArticleRepository as ArticleRepository;
+use Rocket\Store\EloquentArticleRepository as ArticleRepository;
 use Rocket\Store\Article;
 use Rocket\Cockpit\Http\Controllers\Controller as BaseController;
 

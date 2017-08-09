@@ -20,8 +20,10 @@ Route::middleware('web')->get('/story/{id}', 'StoryController@story');
 Route::middleware('web')->get('/story/{id}/update', 'StoryController@update');
 Route::middleware('web')->put('/story/{id}', 'StoryController@updateAction');
 Route::middleware('web')->delete('/story/{id}', 'StoryController@deleteAction');
+Route::middleware('web')->post('/story/{id}/vote', 'StoryController@voteAction');
 
 Route::middleware('web')->post('/story/{id}/comments/create', 'StoryController@createCommentAction');
+Route::middleware('web')->post('/story/comment/{id}/vote', 'StoryController@voteCommentAction');
 
 // admin
 Route::middleware('web')->get('/admin/stories', 'Admin\StoryController@list');

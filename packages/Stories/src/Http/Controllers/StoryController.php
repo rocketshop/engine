@@ -51,7 +51,7 @@ class StoryController extends Controller
             $story->title       = $request->title;
             $story->slug        = str_slug($request->title, '-');
             $story->story       = $request->story;
-            $story->category_id = 1;// $request->category_id;
+            $story->category_id = $request->category_id;
             $story->user_id     = \Auth::user()->id;
 
             $repository->add($story);
@@ -69,6 +69,32 @@ class StoryController extends Controller
             $comment->comment   = $request->comment;
             $comment->story_id  = $id;
             $comment->user_id   = \Auth::user()->id;
+
+            $repository->add($comment);
+        }
+
+        return back();
+    }
+
+    public function voteAction($id, Request $request) 
+    {
+        if (\Auth::check()) {
+            $repository = new StoryRepository();
+
+            $story = $repository->findById($id);
+            $story->vote($request['vote']);
+        }
+
+        return back();
+    }
+
+    public function voteCommentAction($id, Request $request) 
+    {
+        if (\Auth::check()) {
+            $repository = new CommentRepository();
+
+            $comment = $repository->findById($id);
+            $comment->votes += $request['vote'];
 
             $repository->add($comment);
         }

@@ -23,4 +23,17 @@ class Story extends Eloquent implements StoryContract
     {
         return $this->hasMany('Rocket\Stories\Comment');
     }
+
+    public function votes()
+    {
+        return $this->hasMany('Rocket\Stories\Votes');
+    }
+
+    public function vote($value)
+    {
+        $this->votes()->create([
+            'user_id' => \Auth::user()->id,
+            'value' => $value
+        ]);
+    }
 }

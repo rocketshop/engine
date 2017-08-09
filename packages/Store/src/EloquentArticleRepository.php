@@ -3,6 +3,8 @@
 namespace Rocket\Store;
 
 use Rocket\Engine\Contracts\Model;
+use Rocket\Store\Contracts\ArticleRepository;
+use Illuminate\Support\Collection;
 
 class EloquentArticleRepository implements ArticleRepository
 {
@@ -14,9 +16,7 @@ class EloquentArticleRepository implements ArticleRepository
      */
     public function add(Model $model) 
     {
-        $article = new Article();
-        $article->fill($model);
-        $article->save();
+        $model->save();
     }
 
     /**
@@ -32,7 +32,7 @@ class EloquentArticleRepository implements ArticleRepository
      * [findById description]
      * @return [type] [description]
      */
-    public function findById(int $articleId) : Model
+    public function findById($articleId) : Model
     {
         return Article::where('article_id', $articleId)->first();
     }

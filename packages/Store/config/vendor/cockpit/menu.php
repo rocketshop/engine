@@ -2,22 +2,17 @@
 
 return [
     'ecommerce' => [
-        'name'  => trans('ecommerce::default.ecommerce'),
+        'name'  => trans('store::default.store'),
         'items' => [
 
             [
-                'name'  => trans('ecommerce::default.articles'),
-                'url'   => url('admin/articles'),
+                'name'  => trans('store::default.articles'),
+                'url'   => url('admin/store/articles'),
             ],
 
             [
-                'name'  => trans('ecommerce::default.products'),
-                'url'   => url('admin/products'),
-            ],
-
-            [
-                'name'  => trans('ecommerce::default.sales'),
-                'url'   => url('admin/sales'),
+                'name'  => trans('store::default.products'),
+                'url'   => url('admin/store/products'),
             ]
 
         ]

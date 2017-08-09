@@ -25,4 +25,9 @@ class Comment extends Eloquent implements CommentContract
     {
         return $this->belongsTo('Rocket\Stories\Comment');
     }
+
+    public function votes()
+    {
+        return $this->hasMany('Rocket\Stories\CommentVotes');
+    }
 }
